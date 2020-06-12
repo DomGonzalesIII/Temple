@@ -26,11 +26,22 @@ function breatheAnimation() {
 
 }
 
+// play bell tone
+function playSound() {
+  let audio = new Audio(`aud/bell.mp3`);
+  audio.play();
+}
+
 breatheAnimation();
+playSound();
 
-// run breatheAnimation funnction every totaTime milliseconds
-let cycle = setInterval(breatheAnimation, totalTime);
+// run breatheAnimation function and bell every totaTime milliseconds
+let cycle = setInterval(() => {
+  breatheAnimation();
+  playSound();
+}, totalTime);
 
+// end breatheAnimation function and bell after 4 cycles
 setTimeout(() => {
   clearInterval(cycle);
 
