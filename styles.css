@@ -1,0 +1,201 @@
+/*csslint empty-rules: false, ids: false, qualified-headings: false, known-properties: false*/
+/************************* TAG SELECTORS *************************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background: #101010 url('./img/background.jpg') no-repeat center center/cover;
+  color: #fff;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'MuseoModerno', cursive;
+  font-size: 7vw;
+  opacity: 50%;
+}
+
+h3 {
+  font-family: 'MuseoModerno', cursive;
+  height: 9px;
+  opacity: 50%;
+}
+
+/************************ CLASS SELECTORS ************************/
+.animation {
+  animation: rotate 10s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  margin: 90px auto;
+  position: relative;
+  transform: scale(1);
+  width: 200px;
+}
+
+.container.grow {
+  animation: grow 4s linear forwards;
+}
+
+.container.shrink {
+  animation: shrink 4s linear forwards;
+}
+
+.mallet {
+  background-color: #fff;
+  border-radius: 50%;
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.mallet-container {
+  height: 140px;
+  left: 90px;
+  position: absolute;
+  top: -40px;
+  width: 20px;
+}
+
+.rin {
+  background-color: #101010;
+  border-radius: 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.rin-rim {
+  background: conic-gradient(
+    #e8cb40 0%,
+    #d6bb3b 40%,
+    #655600 40%,
+    #655600 60%,
+    #af9500 60%,
+    #998200 100%
+  );
+  border-radius: 50%;
+  height: 220px;
+  left: -10px;
+  position: absolute;
+  top: -10px;
+  width: 220px;
+  z-index: -2;
+}
+
+/************************** KEY FRAMES **************************/
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/************************* MEDIA QUERIES ************************/
+@media only screen and (min-width: 768px) {
+  /******************** TAG SELECTORS ********************/
+  h1 {
+    font-size: 6vw;
+    margin: 2%;
+  }
+
+  /******************* CLASS SELECTORS *******************/
+  .container {
+    margin: 112px auto;
+    transform: scale(1.25);
+  }
+
+  /********************* KEY FRAMES *********************/
+  @keyframes grow {
+    from {
+      transform: scale(1.25);
+    }
+
+    to {
+      transform: scale(1.45);
+    }
+  }
+
+  @keyframes shrink {
+    from {
+      transform: scale(1.45);
+    }
+
+    to {
+      transform: scale(1.25);
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /******************** TAG SELECTORS ********************/
+  h1 {
+    font-size: 5vw;
+    margin: 1%;
+  }
+
+  /******************* CLASS SELECTORS *******************/
+  .container {
+    margin: 135px auto;
+    transform: scale(1.5);
+  }
+
+  /********************* KEY FRAMES *********************/
+  @keyframes grow {
+    from {
+      transform: scale(1.5);
+    }
+
+    to {
+      transform: scale(1.7);
+    }
+  }
+
+  @keyframes shrink {
+    from {
+      transform: scale(1.7);
+    }
+
+    to {
+      transform: scale(1.5);
+    }
+  }
+}
